@@ -1,128 +1,279 @@
 <!DOCTYPE html>
-<html lang="mr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yashoda Dairy | यशोदा डेअरी</title>
+    <title>Dayama Infrastructures and Developers</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for WhatsApp Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        body {
+        /* Root colors */
+        :root {
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --accent: #f59e0b;
+        }
+
+        /* Reset */
+        * {
             margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        nav {
+            background: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--accent);
         }
 
         header {
-            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            background: linear-gradient(135deg, #475569, #64748b);
             color: white;
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 40px;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
         }
 
         header p {
-            font-size: 18px;
-            margin-top: 10px;
+            font-size: 1.2rem;
+            opacity: 0.95;
         }
 
-        .container {
-            max-width: 1100px;
+        /* Plain text line */
+        .header-line {
+            margin-top: 12px;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* Clickable contacts + WhatsApp */
+        .header-contact {
+            margin-top: 18px;
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .header-contact a {
+            color: #f8fafc;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .header-contact a:hover {
+            text-decoration: underline;
+        }
+
+        .whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #25D366;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .whatsapp:hover {
+            background: #1ebc59;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
             margin: auto;
-            padding: 40px 20px;
         }
 
-        .card {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #475569;
         }
 
-        .card h2 {
-            color: #27ae60;
-            margin-bottom: 15px;
+        p {
+            font-size: 1rem;
         }
 
-        .info-grid {
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
 
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            border-radius: 12px;
+        }
+
+        .cta a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 28px;
+            background: white;
+            color: var(--dark);
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .cta a:hover {
+            background: var(--dark);
+            color: white;
+        }
+
         footer {
-            background-color: #222;
-            color: #aaa;
+            background: var(--dark);
+            color: #cbd5f5;
             text-align: center;
             padding: 20px;
-            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>यशोदा डेअरी</h1>
-        <p>ताजे आणि शुद्ध दुग्धजन्य पदार्थ</p>
-    </header>
+<!-- Navbar -->
+<nav>
+    <strong>Dayama Infrastructures</strong>
+    <div>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
 
-    <div class="container">
+<!-- Header -->
+<header>
+    <h1>Dayama Infrastructures and Developers</h1>
+    <p>Building Trust. Creating Landmarks. Developing the Future.</p>
 
-        <div class="card">
-            <h2>आमच्याबद्दल</h2>
-            <p>
-                यशोदा डेअरी ही पुणे येथे आधारित एक विश्वासार्ह डेअरी आहे.
-                आम्ही ग्राहकांना उच्च दर्जाचे, शुद्ध आणि ताजे दुग्धजन्य पदार्थ
-                पुरवण्यास कटिबद्ध आहोत.
-            </p>
-        </div>
-
-        <div class="card">
-            <h2>व्यवसायाची माहिती</h2>
-            <div class="info-grid">
-                <div>
-                    <strong>डेअरीचे नाव:</strong>
-                    <p>यशोदा डेअरी</p>
-                </div>
-                <div>
-                    <strong>ठिकाण:</strong>
-                    <p>पुणे, महाराष्ट्र</p>
-                </div>
-                <div>
-                    <strong>मालक:</strong>
-                    <p>आकाश खेडकर</p>
-                </div>
-                <div>
-                    <strong>व्यवसाय प्रकार:</strong>
-                    <p>दुग्ध व्यवसाय</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2>आमची वैशिष्ट्ये</h2>
-            <ul>
-                <li>१००% शुद्ध दूध</li>
-                <li>ताजे दुग्धजन्य पदार्थ</li>
-                <li>विश्वासार्ह सेवा</li>
-                <li>ग्राहक समाधान</li>
-            </ul>
-        </div>
-
+    <!-- Plain text -->
+    <div class="header-line">
+        Email: dayama.infra@gmail.com | Mobile: +91-9595433456
     </div>
 
-    <footer>
-        © 2026 यशोदा डेअरी | सर्व हक्क राखीव<br>
-        मालक: आकाश खेडकर
-    </footer>
+    <!-- Clickable links + WhatsApp -->
+    <div class="header-contact">
+        <a href="mailto:dayama.infra@gmail.com">📧 dayama.infra@gmail.com</a>
+        <a href="tel:+919595433456">📞 +91-9595433456</a>
+        <a class="whatsapp" href="https://wa.me/919595433456" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+    </div>
+</header>
+
+<!-- About Section -->
+<section id="about">
+    <h2>About Us</h2>
+    <p>
+        Dayama Infrastructures and Developers is a trusted name in the construction
+        and real estate industry, delivering high-quality infrastructure projects
+        with integrity, innovation, and excellence.
+    </p>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+        <div class="card">
+            <h3>Residential Projects</h3>
+            <p>Modern and sustainable residential developments tailored to your lifestyle.</p>
+        </div>
+        <div class="card">
+            <h3>Commercial Buildings</h3>
+            <p>High-quality commercial infrastructure for growing businesses.</p>
+        </div>
+        <div class="card">
+            <h3>Land Development</h3>
+            <p>End-to-end land development with legal compliance and smart planning.</p>
+        </div>
+        <div class="card">
+            <h3>Project Management</h3>
+            <p>Professional management ensuring timely delivery and cost efficiency.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Call To Action -->
+<section class="cta">
+    <h2>Let’s Build Something Great Together</h2>
+    <p>Contact us today to discuss your next project.</p>
+    <a href="#contact">Get in Touch</a>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Email:</strong> dayama.infra@gmail.com</p>
+    <p><strong>Mobile:</strong> +91-9595433456</p>
+    <p><strong>Location:</strong> India</p>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Dayama Infrastructures and Developers. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
