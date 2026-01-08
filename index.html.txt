@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dayama Infrastructures and Developers</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #f59e0b;
+            --dark: #0f172a;
+            --light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), #2563eb);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        section {
+            padding: 70px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .about, .services, .projects, .contact {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        .cta {
+            background: linear-gradient(135deg, var(--secondary), #fbbf24);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 16px;
+        }
+
+        .cta h2 {
+            color: white;
+        }
+
+        .cta a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 30px;
+            background: white;
+            color: var(--dark);
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .cta a:hover {
+            background: var(--dark);
+            color: white;
+        }
+
+        footer {
+            background: var(--dark);
+            color: #cbd5f5;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <strong>Dayama Infrastructures</strong>
+    <div>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<header>
+    <h1>Dayama Infrastructures and Developers</h1>
+    <p>Building Trust. Creating Landmarks. Developing the Future.</p>
+</header>
+
+<section id="about" class="about">
+    <h2>About Us</h2>
+    <p>
+        Dayama Infrastructures and Developers is a trusted name in the construction
+        and real estate industry, delivering high-quality infrastructure projects
+        with integrity, innovation, and excellence. We specialize in residential,
+        commercial, and industrial developments.
+    </p>
+</section>
+
+<section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+        <div class="card">
+            <h3>Residential Projects</h3>
+            <p>Modern and sustainable residential developments tailored to your lifestyle.</p>
+        </div>
+        <div class="card">
+            <h3>Commercial Buildings</h3>
+            <p>High-quality commercial infrastructure for growing businesses.</p>
+        </div>
+        <div class="card">
+            <h3>Land Development</h3>
+            <p>End-to-end land development with legal compliance and smart planning.</p>
+        </div>
+        <div class="card">
+            <h3>Project Management</h3>
+            <p>Professional management ensuring timely delivery and cost efficiency.</p>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="projects">
+    <h2>Why Choose Us</h2>
+    <div class="services-grid">
+        <div class="card">
+            <h3>Quality Assurance</h3>
+            <p>We follow strict quality standards in every project we deliver.</p>
+        </div>
+        <div class="card">
+            <h3>Experienced Team</h3>
+            <p>Our team consists of skilled engineers, architects, and professionals.</p>
+        </div>
+        <div class="card">
+            <h3>Timely Delivery</h3>
+            <p>We value your time and ensure projects are completed as promised.</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Let’s Build Something Great Together</h2>
+    <p>Contact us today to discuss your next project.</p>
+    <a href="#contact">Get in Touch</a>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Email:</strong> info@dayamainfrastructures.com</p>
+    <p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
+    <p><strong>Location:</strong> India</p>
+</section>
+
+<footer>
+    <p>© 2026 Dayama Infrastructures and Developers. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
