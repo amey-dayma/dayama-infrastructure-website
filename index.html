@@ -2,278 +2,105 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dayama Infrastructures and Developers</title>
 
-    <!-- Font Awesome for WhatsApp Icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
-        /* Root colors */
-        :root {
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --accent: #f59e0b;
-        }
-
-        /* Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
         body {
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
-        nav {
-            background: white;
-            padding: 15px 20px;
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+            url("https://images.unsplash.com/photo-1503387762-592deb58ef4e") center/cover;
+            color: white;
+            padding: 120px 0;
+        }
+
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: #fff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
+            justify-content: center;
+            font-size: 28px;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
             z-index: 1000;
         }
 
-        nav a {
-            text-decoration: none;
-            color: var(--dark);
-            margin-left: 20px;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            color: var(--accent);
-        }
-
-        header {
-            background: linear-gradient(135deg, #475569, #64748b);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.95;
-        }
-
-        /* Plain text line */
-        .header-line {
-            margin-top: 12px;
-            font-size: 0.95rem;
-            opacity: 0.9;
-        }
-
-        /* Clickable contacts + WhatsApp */
-        .header-contact {
-            margin-top: 18px;
-            font-size: 0.95rem;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .header-contact a {
-            color: #f8fafc;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .header-contact a:hover {
-            text-decoration: underline;
-        }
-
-        .whatsapp {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: #25D366;
-            color: white;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        .whatsapp:hover {
-            background: #1ebc59;
-            text-decoration: none;
-        }
-
-        section {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #475569;
-        }
-
-        p {
-            font-size: 1rem;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-6px);
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-            color: var(--accent);
-        }
-
-        .cta {
-            background: linear-gradient(135deg, #f59e0b, #fbbf24);
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-            border-radius: 12px;
-        }
-
-        .cta a {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 12px 28px;
-            background: white;
-            color: var(--dark);
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .cta a:hover {
-            background: var(--dark);
-            color: white;
+        .whatsapp-btn:hover {
+            background-color: #1ebe5d;
+            color: #fff;
         }
 
         footer {
-            background: var(--dark);
-            color: #cbd5f5;
-            text-align: center;
-            padding: 20px;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.2rem;
-            }
+            background: #111;
+            color: #ccc;
         }
     </style>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav>
-    <strong>Dayama Infrastructures</strong>
-    <div>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Dayama Infrastructures</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </div>
 </nav>
 
-<!-- Header -->
-<header>
-    <h1>Dayama Infrastructures and Developers</h1>
-    <p>Building Trust. Creating Landmarks. Developing the Future.</p>
-
-    <!-- Plain text -->
-    <div class="header-line">
-        Email: dayama.infra@gmail.com | Mobile: +91-9595433456
-    </div>
-
-    <!-- Clickable links + WhatsApp -->
-    <div class="header-contact">
-        <a href="mailto:dayama.infra@gmail.com">📧 dayama.infra@gmail.com</a>
-        <a href="tel:+919595433456">📞 +91-9595433456</a>
-        <a class="whatsapp" href="https://wa.me/919595433456" target="_blank">
-            <i class="fab fa-whatsapp"></i> WhatsApp
-        </a>
-    </div>
-</header>
-
-<!-- About Section -->
-<section id="about">
-    <h2>About Us</h2>
-    <p>
-        Dayama Infrastructures and Developers is a trusted name in the construction
-        and real estate industry, delivering high-quality infrastructure projects
-        with integrity, innovation, and excellence.
-    </p>
-</section>
-
-<!-- Services Section -->
-<section id="services">
-    <h2>Our Services</h2>
-    <div class="services-grid">
-        <div class="card">
-            <h3>Residential Projects</h3>
-            <p>Modern and sustainable residential developments tailored to your lifestyle.</p>
-        </div>
-        <div class="card">
-            <h3>Commercial Buildings</h3>
-            <p>High-quality commercial infrastructure for growing businesses.</p>
-        </div>
-        <div class="card">
-            <h3>Land Development</h3>
-            <p>End-to-end land development with legal compliance and smart planning.</p>
-        </div>
-        <div class="card">
-            <h3>Project Management</h3>
-            <p>Professional management ensuring timely delivery and cost efficiency.</p>
-        </div>
+<!-- Hero -->
+<section class="hero text-center">
+    <div class="container">
+        <h1 class="display-5 fw-bold">Dayama Infrastructures and Developers</h1>
+        <p class="lead">Building Trust. Creating Landmarks. Developing the Future.</p>
+        <p class="mt-3">
+            📧 dayama.infra@gmail.com | 📞 +91-9595433456
+        </p>
     </div>
 </section>
 
-<!-- Call To Action -->
-<section class="cta">
-    <h2>Let’s Build Something Great Together</h2>
-    <p>Contact us today to discuss your next project.</p>
-    <a href="#contact">Get in Touch</a>
+<!-- About -->
+<section id="about" class="py-5">
+    <div class="container text-center">
+        <h2 class="mb-3 text-primary">About Us</h2>
+        <p class="mx-auto" style="max-width:800px;">
+            Dayama Infrastructures and Developers is a trusted name in the construction
+            and real estate industry, delivering high-quality infrastructure projects
+            with integrity, innovation, and excellence.
+        </p>
+    </div>
 </section>
 
-<!-- Contact Section -->
-<section id="contact">
-    <h2>Contact Us</h2>
-    <p><strong>Email:</strong> dayama.infra@gmail.com</p>
-    <p><strong>Mobile:</strong> +91-9595433456</p>
-    <p><strong>Location:</strong> India</p>
-</section>
-
-<!-- Footer -->
-<footer>
-    <p>© 2026 Dayama Infrastructures and Developers. All Rights Reserved.</p>
-</footer>
-
-</body>
-</html>
+<!-- Services -->
+<section id="services" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4 text-primary">Our Services</h2>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Residential Projects</h5>
+                        <p class="card-text">Modern and sustainable residential developments tailored to your lifestyle.</p>
